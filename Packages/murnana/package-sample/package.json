@@ -1,0 +1,9 @@
+{
+  "name": "com.murnana.package-sample",
+  "version": "0.0.1-a",
+  "displayName": "Murnana Package Sample",
+  "description": "Sample Unity Package",
+  "unity": "2019.4",
+  "unityRelease": "9f1",
+  "type": "sample"
+}

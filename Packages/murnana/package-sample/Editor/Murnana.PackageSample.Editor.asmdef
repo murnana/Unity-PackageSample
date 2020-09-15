@@ -1,0 +1,19 @@
+{
+    "name": "Murnana.PackageSample.Editor",
+    "references": [
+        "Murnana.PackageSample"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "UNITY_2019_4_OR_NEWER"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

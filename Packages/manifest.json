@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "com.murnana.package-sample": "file:./murnana/package-sample",
+    "com.unity.ide.rider": "1.1.4",
+    "com.unity.ide.vscode": "1.2.2",
+    "com.unity.test-framework": "1.1.16",
+    "com.unity.ugui": "1.0.0",
+    "com.unity.modules.imageconversion": "1.0.0",
+    "com.unity.modules.imgui": "1.0.0",
+    "com.unity.modules.jsonserialize": "1.0.0",
+    "com.unity.modules.ui": "1.0.0",
+    "com.unity.modules.uielements": "1.0.0"
+  }
+}
