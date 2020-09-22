@@ -1,0 +1,53 @@
+name: Unity Test Runner
+
+on:
+  push:
+    branches:
+      - develop
+      - master
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  testForVersions:
+    name: Test for version ${{ matrix.unityVersion }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        unityVersion:
+          - 2019.4.9f1
+        include:
+          - unityVersion: 2019.4.9f1
+            license: UNITY_LICENSE_2019_4
+
+    steps:
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      # Cache
+      - uses: actions/cache@v1.1.0
+        with:
+          path: Library
+          key: Library-${{ matrix.unityVersion }}
+
+      # Test
+      - name: Run tests
+        uses: webbertakken/unity-test-runner@v1.3
+        id: tests
+        env:
+          UNITY_LICENSE: ${{ secrets[matrix.license] }}
+        with:
+          unityVersion: ${{ matrix.unityVersion }}
+          artifactsPath: ${{ matrix.unityVersion }}-artifacts
+
+      # Upload Result
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Test results for ${{ matrix.unityVersion }}
+          path: ${{ steps.tests.outputs.artifactsPath }}
