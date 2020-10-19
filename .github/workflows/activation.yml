@@ -1,10 +1,10 @@
 name: Acquire activation file
 
-# on:
-#   workflow_dispatch:
-#   push:
-#     branches:
-#       - feature/add-github-actions
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/add-github-actions
 
 jobs:
   activation:

@@ -44,7 +44,6 @@ jobs:
           UNITY_LICENSE: ${{ secrets[matrix.license] }}
         with:
           unityVersion: ${{ matrix.unityVersion }}
-          artifactsPath: ${{ matrix.unityVersion }}-artifacts
 
       # Upload Result
       - uses: actions/upload-artifact@v1
